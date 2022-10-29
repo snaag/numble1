@@ -16,5 +16,34 @@ query FetchBoard($number: Int!) {
         contents
         createdAt
         number
+        writer
     }
 }`;
+
+export const CREATE_BOARD = gql`
+mutation CreateBoard($writer: String!, $title: String!, $contents: String!) {
+    createBoard(writer: $writer, title: $title, contents: $contents) {
+        _id
+        number
+        message
+    }
+}`;
+
+export const UPDATE_BOARD = gql`
+mutation UpdateBoard($number: Int!, $writer: String!, $title: String!, $contents: String!) {
+    updateBoard(number: $number, writer: $writer, title: $title, contents: $contents) {
+        _id
+        number
+        message
+    }
+}`;
+
+export const DELETE_BOARD = gql`
+mutation DeleteBoard($number: Int!) {
+    deleteBoard(number: $number) {
+        _id
+        number
+        message
+    }
+}
+`;

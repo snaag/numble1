@@ -1,9 +1,9 @@
 import React from 'react';
-
-import { HOME } from "../pages/home";
-import { GAME } from "../pages/game";
-import { DIARY } from "../pages/diary";
 import Link from "next/link";
+
+import { HOME } from "pages/home";
+import { GAME } from "pages/game";
+import { DIARY } from "pages/diary";
 
 const Layout = ({ children }) => {
     return (

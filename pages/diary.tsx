@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Head from "next/head";
 import Link from "next/link";
 
-import DiaryList from "../components/diary/diaryList";
+import DiaryList from "components/diary/diaryList";
 
 export const DIARY = '일기';
 

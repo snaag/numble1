@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useQuery} from "@apollo/client";
 
-import { FETCH_DIARY_LIST } from "../../queries/diary";
+import { FETCH_DIARY_LIST } from "queries/diary";
 import DiaryItem from "./diaryItem";
 
 
@@ -12,7 +12,7 @@ const DiaryList = () => {
     // page
 
     const diaryList = [];
-    const { loading, error, data } = useQuery(FETCH_DIARY_LIST, {variables: {page: 3}});
+    const { loading, error, data } = useQuery(FETCH_DIARY_LIST, {variables: {page: 1}});
     console.log(data);
     if(data) {
         diaryList.push(...data.fetchBoards);

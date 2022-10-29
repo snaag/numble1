@@ -7,8 +7,10 @@ const DiaryItem = ({ number, title, createdAt }) => {
     return (
         <article>
             <h1>{title}</h1>
-            <h2>{createdAt}</h2>
+            <h2>{createdAt} ({number})</h2>
             <Link href={url}>자세히~</Link>
+            <br/>
+            <br/>
         </article>
     );
 };
