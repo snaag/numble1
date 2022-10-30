@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/router";
+import Head from "next/head";
 import {useMutation, useQuery} from "@apollo/client";
 
 import {FETCH_DIARY_ONE, UPDATE_BOARD} from "queries/diary";
@@ -68,6 +69,9 @@ const Edit = () => {
         loading ? <div>로딩중</div> :
             valid ?
                 <div>
+                    <Head>
+                        <title>일기 {`>`} 수정하기</title>
+                    </Head>
                     <h1>다이어리 수정 페이지 number::{number}</h1>
 
                     <form onSubmit={submit}>

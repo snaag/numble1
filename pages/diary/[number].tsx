@@ -8,7 +8,6 @@ import {DELETE_BOARD, FETCH_DIARY_ONE} from "queries/diary";
 import NoDiary from "components/diary/noDiary";
 import {goToPathRefresh} from "utils/util";
 
-
 const DiaryDetail = () => {
     const router = useRouter();
     const [ mutateTriggerFunction, deleteStatus ] = useMutation(DELETE_BOARD );
@@ -63,7 +62,7 @@ const DiaryDetail = () => {
             valid ?
                 <div>
                     <Head>
-                        <title>{diary.title}</title>
+                        <title>{`일기 > ${diary.title}`}</title>
                     </Head>
                     <header>
                         <span>createdAt::{diary.createdAt}</span>

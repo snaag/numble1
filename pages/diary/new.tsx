@@ -1,5 +1,6 @@
 import React from 'react';
 import {useMutation} from "@apollo/client";
+import Head from "next/head";
 
 import {CREATE_BOARD} from "queries/diary";
 import {goToPathRefresh} from "utils/util";
@@ -24,6 +25,9 @@ const New = () => {
 
     return (
         <div>
+            <Head>
+                <title>일기 {`>`} 추가하기</title>
+            </Head>
             <h1>다이어리 작성 페이지</h1>
             <form onSubmit={submit}>
                 <input type="text" placeholder="작성자"/>
