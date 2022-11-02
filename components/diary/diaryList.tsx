@@ -2,38 +2,21 @@ import React, {useEffect, useState} from 'react';
 import {useQuery, useLazyQuery} from "@apollo/client";
 
 import { FETCH_DIARY_LIST } from "queries/diary";
-import DiaryItem from "./diaryItem";
 import {myThrottle} from "../../utils/util";
-import diary from "../../pages/diary";
+import DiaryItem from "./diaryItem";
 
 
 const DiaryList = () => {
     const [page, setPage] = useState(1);
     const [diaryList, setDiaryList] = useState([]);
-    const [triggerFunction, fetchStatus]  = useLazyQuery(FETCH_DIARY_LIST)
-    //
-    //
-    // useEffect(() => {
-    //     console.log('useEffect called');
-    //     window.addEventListener('scroll', scroll);
-    //     return () => {
-    //         console.log('clean up')
-    //         window.removeEventListener('scroll', scroll);
-    //     }
-    // });
-    //
-    //
-
-
+    const [triggerFunction, fetchStatus]  = useLazyQuery(FETCH_DIARY_LIST);
 
     useEffect(() => {
-        loadNextDiaryList({ page }).then((res) => {
-            // @ts-ignore
-            const fetchBoards = res?.data?.fetchBoards || [];
-            setDiaryList([...diaryList, ...fetchBoards])
-        })
-    })
-
+        window.addEventListener('scroll', scrollListener);
+        return () => {
+            window.removeEventListener('scroll', scrollListener);
+        }
+    });
 
     const loadNextDiaryList = (variables) => {
         return new Promise((resolve, reject) => {
@@ -45,34 +28,38 @@ const DiaryList = () => {
                 reject(e)
             }
         })
-    }
+    };
 
     const scroll = async () => {
         const { scrollTop, offsetHeight } = document.documentElement;
         const { innerHeight } = window;
 
-        if(innerHeight + scrollTop >= offsetHeight) {
+        if(innerHeight + scrollTop + 10 >= offsetHeight) {
             setPage(page+1);
             loadNextDiaryList({ page: page+1 }).then((res) => {
                 // @ts-ignore
                 const fetchBoards = res?.data?.fetchBoards || [];
                 setDiaryList([...diaryList, ...fetchBoards])
             })
-
         }
-    }
-    //
-    // const _fn = myThrottle(scroll, 500)
-    // const handleScroll = () => {
-    //     _fn();
-    // }
+    };
+
+    const scrollListener = myThrottle(scroll, 500);
+
+    const { loading, error, data } = useQuery(FETCH_DIARY_LIST, {
+        variables: { page },
+        onCompleted: (data) => {
+            setDiaryList([...data.fetchBoards]);
+        }
+    });
 
     return (
         <section>
             {
+                loading ? <span>Loading</span> :
+                    error ? <span>error</span> :
                         <>
                             <span>현재 {page} page</span>
-                            <button onClick={scroll}>다음</button>
                             <br/>
 
                             {
