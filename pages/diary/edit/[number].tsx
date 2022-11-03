@@ -6,6 +6,7 @@ import {useMutation, useQuery} from "@apollo/client";
 import {FETCH_DIARY_ONE, UPDATE_BOARD} from "queries/diary";
 import NoDiary from "components/diary/noDiary";
 import {goToPathRefresh} from "utils/util";
+import Link from "next/link";
 
 const Edit = () => {
     const router = useRouter();
@@ -17,6 +18,7 @@ const Edit = () => {
         prevContents: '',
         prevWriter: ''
     })
+
 
     useEffect( () => {
         const regex = /^\d+$/;
@@ -80,9 +82,9 @@ const Edit = () => {
                         <br/>
                         <textarea defaultValue={diary.prevContents} placeholder={diary.prevContents}></textarea>
                         <button type="submit">수정하기</button>
-                        <a href="/diary">
+                        <Link href="/diary">
                             <button type="button">취소하기</button>
-                        </a>
+                        </Link>
                     </form>
                 </div> :
                 <NoDiary/>

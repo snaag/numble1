@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 
 import {goToPathRefresh} from "utils/util";
+import Link from "next/link";
 
 const NoDiary = () => {
     const SECONDS = 3;
@@ -17,9 +18,9 @@ const NoDiary = () => {
     return (
         <div>
             <h2>없어요, {SECONDS} 초 뒤에 다이어리 목록으로 돌아갑니다</h2>
-            <a href='/diary'>
+            <Link href='/diary'>
                 <button>Back</button>
-            </a>
+            </Link>
         </div>
     );
 };
