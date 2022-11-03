@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
+import Link from "next/link";
 
 import {goToPathRefresh} from "utils/util";
-import Link from "next/link";
 
 const NoDiary = () => {
     const SECONDS = 3;

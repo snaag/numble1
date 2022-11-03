@@ -25,9 +25,9 @@ const WordRelay = () => {
     }
 
     return (
-        <div>
-            <h1>끝말잇기</h1>
-            <h2>제시어 : {prevWord}</h2>
+        <div className="game__box">
+            <h1 className="game__title">끝말잇기</h1>
+            <h2 className="game__subtitle">제시어 : {prevWord}</h2>
             <br/>
             <form onSubmit={submit}>
                 <input type="text"/>

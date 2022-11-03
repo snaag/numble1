@@ -1,225 +1,227 @@
+* {
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex__column {
+    flex-direction: column;
+}
+
+.gap-6 {
+    gap: 6px;
+}
+
 .layout {
     background-image: url("./assets/background.png");
-    width: 1024px;
+    width: 1204px;
     height: 600px;
     background-size: contain;
+    padding: 20px;
 }
 
-.layout__title {
-    background: yellow;
-}
 .layout__inner {
-    display: flex;
-    background-position: center;
     background-image: url("./assets/inner-box.png");
-    width: 808px;
-    height: 544px;
+    width: 850px;
+    height: 580px;
     background-repeat: no-repeat;
-    margin-left: 17px;
-    padding-top: 50px;
-}
-.layout__left {
-    width: 250px;
-    height: 440px;
-    border: 1px solid #000;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-top: 44px;
-    margin-left: 46px;
+    background-size: contain;
 
 }
-.left__inner {
-    padding-left: 30px;
-    padding-top: 28px;
-}
-.picture__inner {
-    background-image: url("./assets/profile.png");
-    width: 142px;
-    height: 123px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.profile__line {
-    height: 10px;
-    width: 140px;
-    background: white;
-    border-bottom: 1px dotted black;
-}
-.profile__info {
-    margin-top: 10px;
-}
-.info__text {
-    display: flex;
-    gap: 9.5px;
-    margin-bottom: 10px;
-}
-.info__name > .icon {
-    background-image: url("./assets/info_person.png");
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.info__phone > .icon {
-    background-image: url("./assets/info_call.png");
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.info__email > .icon {
-    background-image: url("./assets/info_mail.png");
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.info__instagram > .icon {
-    background-image: url("./assets/info_instagram.png");
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.left__mood {
-    margin-top: 125px;
+
+.layout__left {
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 208px;
+    height: 485px;
 }
 
 .layout__right {
-    width: 524px;
-    height: 440px;
-    border: 1px solid #000;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-top: 44px;
-    margin-left: 6px;
-    z-index:999;
-}
-
-.layout__nav {
-    width: 60px;
-    height: 100px;
-    margin-top: 60px;
-}
-.nav__button {
-    width: 80px;
-    height: 42px;
-    margin-bottom: 2px;
-    border-radius: 4px;
-    border: 1px solid black;
-    margin-left: -2px;
-    font-size: 18px;
-    color: white;
-    backgroud-color: #298EB5;
-}
-.nav__button:focus {
-    background-color: #fff;
-    color: black;
-}
-
-.home {
     margin-top: 40px;
-    margin-left: 30px;
-}
-.home__title {
-    font-size: 18px;
-    font-weight: 700;
-    color: blue;
-}
-.news__line {
-    width: 200px;
-    height: 5px;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
+    width: 516px;
+    height: 485px;
+    z-index: 10;
+
 }
 
-.home__top {
-    display: flex;
-    gap: 20px;
-}
-.diary__item {
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-.news__diary-list .diary__item::before {
-    content:'다이어리';
-    font-size: 8px;
-    background-color: #EE3E61;
-    margin-right: 8px;
-    padding: 3px;
-    border-radius: 2px;
-    color: #fff;
-    margin-top: 5px;
-}
-
-.game__inner {
-    padding: 30px;
-}
-.game__item {
-    width: 222px;
-    height: 168px;
-    background-color: #f6f6f6;
-    border: 1px solid #999;
+.left__inner {
+    margin-top: 10px;
+    width: 208px;
+    height: 435px;
+    background-color: white;
     border-radius: 10px;
+    border: 1px solid black;
 }
-.game__title {
-    font-size: 16px;
-    font-weight: 700;
+.right__inner {
+    margin-top: 10px;
+    width: 516px;
+    height: 435px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: relative;
+    z-index: 10;
+
 }
-.game__describe {
-    font-size: 14px;
+.layout__nav {
+    position: absolute;
+    top: 10px;
+    right: -52px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
 }
 
-.diary__inner {
-    padding: 30px;
+.nav__item {
+    width: 57px;
+    height: 34px;
+    background-color: #fff;
+    border: 1px solid #0f465e;
+    margin-bottom: 10px;
+    border-radius: 0px 5px 5px 0px;
 }
-.diary__list {
+
+.nav__item:focus {
+    background: green;
+}
+
+.layout__children {
+    padding: 20px;
+}
+
+
+/* game game game game game */
+.game__box {
+    width: 222px;
+    height: 145px;
+    border: 1px solid rgb(171, 171, 171);
+    border-radius: 10px;
+    background-color: rgb(246, 246, 246);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+/* diary-list diary-list diary-list diary-list diary-list */
+.diary-list__layout {
     height: 350px;
     overflow-y: scroll;
 }
 
-.diary__list .diary__item {
+/* diary-item diary-item diary-item diary-item diary-item */
+.diary-item__layout {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 400px;
-    margin: 15px 0;
-    background-color: #DDD;
-    border: 1px solid gray;
-    padding: 10px;
-    border-radius: 4px;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    border: 1px solid rgb(153, 153, 153);
+    border-radius: 2px;
 }
 
-.diary__item .item__left {
-    padding: 10px;
+.diary-item__date {
+    background: rgb(85, 178, 212);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 5px 1px;
+    border-radius: 2px;
+    color: white;
 }
 
-.diary__item .diary__created-at {
-    display: inline-block;
-    background-color: #55B2D4;
-    padding: 3px;
-    margin-bottom: 5px;
-}
-
-.diary__item .diary__title:before {
+.diary-item__title:before {
     content: "제목 : "
 }
-
-.diary__detail {
-    padding: 30px;
+.diary-item__title {
+    color: black;
+    font-weight: 600;
+    margin-top: 7px;
+    font-size: 14px;
 }
 
-.detail__created-at {
-    display: inline-block;
-    font-size: 18px;
-    margin-bottom: 10px;
+/* diary-detail */
+.diary-detail__layout {
+    width: 470px;
+    height: 350px;
+    border: 1px solid rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
 }
 
-.detail__title {
-    font-size: 18px;
-    font-weight: 700;
+.diary-detail__date {
+    width: 470px;
+    font-size: 13px;
+    font-weight: 650;
+    color: rgb(102, 102, 102);
+    background-color: rgb(221, 221, 221);
+    padding: 6px 17px 5px;
 }
 
-.detail__contents {
+.diary-detail__title {
+    width: 80%;
+    text-align: center;
+    overflow: hidden;
     font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.diary-detail__contents {
+    color: rgb(102, 102, 102);
+    width: 100%;
+    height: 133px;
+    font-size: 14px;
+    font-weight: 350;
+    margin-top: 26px;
+    padding: 0px 48px;
+    overflow: hidden;
+}
+
+.diary-detail__buttons {
+    margin-top: 60px;
+}
+
+/* diary-edit diary-edit diary-edit diary-edit diary-edit */
+.diary-edit__writer {
+    width: 20%;
+    height: 18px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 3px;
+    margin-top: 14px;
+}
+.diary-edit__title {
+    width: 80%;
+    height: 18px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 3px;
+}
+.diary-edit__contents {
+    width: 100%;
+    height: 248px;
+    border: 1px solid rgb(221, 221, 221);
+    margin-top: 14px;
+    padding-top: 2px;
+    border-radius: 3px;
+    resize: none;
 }

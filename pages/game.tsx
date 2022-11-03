@@ -12,9 +12,11 @@ const Game = () => {
             <Head>
                 <title>{GAME}</title>
             </Head>
-            <h1>GAME</h1>
-            <WordRelay/>
-            <Lotto/>
+            <h1>Game</h1>
+            <div className="flex flex__column gap-6 align-items-center">
+                <WordRelay/>
+                <Lotto/>
+            </div>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useQuery} from "@apollo/client";
 
-import { FETCH_DIARY_LIST } from "../../queries/diary";
+import { FETCH_DIARY_LIST } from "queries/diary";
 import DiaryItem from "./diaryItem";
 
 
@@ -17,12 +17,11 @@ const DiaryList = () => {
     });
 
     return (
-        <section>
+        <section className="diary-list__layout">
             {
                 loading ? <span>Loading</span> :
                     error ? <span>error</span> :
                         <>
-                            <span>현재 {page} page</span>
                             <br/>
 
                             {

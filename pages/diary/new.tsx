@@ -1,10 +1,10 @@
-import React from 'react';
 import {useMutation} from "@apollo/client";
 import Head from "next/head";
+import Link from "next/link";
+import React from 'react';
 
 import {CREATE_BOARD} from "queries/diary";
 import {goToPathRefresh} from "utils/util";
-import Link from "next/link";
 
 const New = () => {
     const [ mutateTriggerFunction, createStatus ] = useMutation(CREATE_BOARD);
@@ -31,10 +31,10 @@ const New = () => {
             </Head>
             <h1>다이어리 작성 페이지</h1>
             <form onSubmit={submit}>
-                <input type="text" placeholder="작성자"/>
-                <input type="text" placeholder="제목"/>
+                <input className="diary-edit__writer" type="text" placeholder="작성자"/>
+                <input className="diary-edit__title" type="text" placeholder="제목"/>
                 <br/>
-                <textarea placeholder="내용"></textarea>
+                <textarea className="diary-edit__contents" placeholder="내용"></textarea>
                 <button type="submit">등록하기</button>
                 <Link href="/diary">
                     <button type="button">취소하기</button>

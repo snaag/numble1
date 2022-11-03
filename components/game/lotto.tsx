@@ -26,12 +26,14 @@ const Lotto = () => {
     }
 
     return (
-        <div>
+        <div className="game__box">
             <h1>숫자 로또</h1>
             <br/>
-            {
-                lottoNumberList.map((item, index) => <span key={index}>[{item}]</span>)
-            }
+            <div>
+                {
+                    lottoNumberList.map((item, index) => <span key={index}>[{item}]</span>)
+                }
+            </div>
             <br/>
             <button onClick={generate}>생성</button>
         </div>
