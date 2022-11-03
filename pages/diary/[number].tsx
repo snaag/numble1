@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
 import {useMutation, useQuery} from "@apollo/client";
+import React, {useEffect, useState} from 'react';
 import { useRouter } from 'next/router'
 import Link from "next/link";
 import Head from "next/head";
@@ -54,23 +54,17 @@ const DiaryDetail = () => {
         }
     }
 
-    // todo
-    // 왤케 많이불러
     return (
         loading ? <div>로딩중</div> :
             valid ?
-                <div>
+                <div className="diary-detail__layout">
                     <Head>
                         <title>{`일기 > ${diary.title}`}</title>
                     </Head>
-                    <header>
-                        <span>createdAt::{diary.createdAt}</span>
-                    </header>
-                    <section>
-                        <h1>title::{diary.title}</h1>
-                        <p>contents::{diary.contents}</p>
-                    </section>
-                    <section>
+                    <div className="diary-detail__date">{diary.createdAt}</div>
+                    <h1 className="diary-detail__title">{diary.title}</h1>
+                    <p className="diary-detail__contents">{diary.contents}</p>
+                    <section className="diary-detail__buttons">
                         <button>
                             <Link href={`/diary/edit/${number}`}>수정하기</Link>
                         </button>

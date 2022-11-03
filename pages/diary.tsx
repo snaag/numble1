@@ -12,8 +12,8 @@ const Diary = () => {
             <Head>
                 <title>{DIARY}</title>
             </Head>
-            <header>
-                <h1>Diary TODAY STORY</h1>
+            <header className="flex align-items-center justify-content-space-between">
+                <h1>Diary</h1>
                 <Link href='/diary/new'>
                     <button>
                         다이어리 작성

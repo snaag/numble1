@@ -1,12 +1,12 @@
+import {useMutation, useQuery} from "@apollo/client";
 import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/router";
 import Head from "next/head";
-import {useMutation, useQuery} from "@apollo/client";
+import Link from "next/link";
 
 import {FETCH_DIARY_ONE, UPDATE_BOARD} from "queries/diary";
 import NoDiary from "components/diary/noDiary";
 import {goToPathRefresh} from "utils/util";
-import Link from "next/link";
 
 const Edit = () => {
     const router = useRouter();
@@ -74,13 +74,13 @@ const Edit = () => {
                     <Head>
                         <title>일기 {`>`} 수정하기</title>
                     </Head>
-                    <h1>다이어리 수정 페이지 number::{number}</h1>
+                    <h1>다이어리 수정 페이지</h1>
 
                     <form onSubmit={submit}>
-                        <input type="text" defaultValue={diary.prevWriter}/>
-                        <input type="text" defaultValue={diary.prevTitle} placeholder={diary.prevTitle}/>
+                        <input className="diary-edit__writer" type="text" defaultValue={diary.prevWriter}/>
+                        <input className="diary-edit__title" type="text" defaultValue={diary.prevTitle} placeholder={diary.prevTitle}/>
                         <br/>
-                        <textarea defaultValue={diary.prevContents} placeholder={diary.prevContents}></textarea>
+                        <textarea className="diary-edit__contents" defaultValue={diary.prevContents} placeholder={diary.prevContents}></textarea>
                         <button type="submit">수정하기</button>
                         <Link href="/diary">
                             <button type="button">취소하기</button>

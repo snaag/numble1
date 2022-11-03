@@ -1,7 +1,8 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
-import 'styles/globals.css'
 import Layout from "components/layout";
+import 'styles/style.css'
+import 'styles/reset.css'
 
 const client = new ApolloClient({
     uri: 'https://practice.codebootcamp.co.kr/graphql',
