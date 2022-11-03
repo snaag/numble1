@@ -20,7 +20,6 @@ const DiaryDetail = () => {
         createdAt: ''
     })
 
-
     useEffect(() => {
         const regex = /^\d+$/;
         const isNumber = regex.test(String(router.query.number));
@@ -78,9 +77,9 @@ const DiaryDetail = () => {
                         <button onClick={remove}>삭제하기</button>
                     </section>
                     <footer>
-                        <a href="/diary">
+                        <Link href="/diary">
                             <button>목록으로</button>
-                        </a>
+                        </Link>
                     </footer>
                 </div> :
                 <NoDiary/>
