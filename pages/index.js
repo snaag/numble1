@@ -28,7 +28,7 @@ export default function Home() {
                     <ul className="news__diary-list">
                         {
                             diaryList.map((diary) =>
-                                <li className="diary__item">{diary.title}</li>
+                                <li className="diary__item" key={diary.number}>{diary.title}</li>
                             )
                         }
                     </ul>
