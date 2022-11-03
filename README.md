@@ -1,11 +1,3 @@
-## How to run
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
 ## Deploy url
 https://numble1-1vmu.vercel.app/
 
@@ -26,4 +18,14 @@ https://numble1-1vmu.vercel.app/
     - style
         - style 코드를 깔끔하게 작성하지 못했다.
         
-        
+## I used
+- Next.js
+- Graphql 요청을 위한 Apollo-client
+
+## How to run
+
+```bash
+npm run dev
+# or
+yarn dev
+```
